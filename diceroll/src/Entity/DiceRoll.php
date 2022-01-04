@@ -22,6 +22,10 @@ class DiceRoll
     #[ORM\Column(type: 'integer')]
     private $dice3;
 
+    #[ORM\ManyToOne(targetEntity: Experience::class, inversedBy: 'diceRoll')]
+    #[ORM\JoinColumn(nullable: false)]
+    private $experience;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -59,6 +63,18 @@ class DiceRoll
     public function setDice3(int $dice3): self
     {
         $this->dice3 = $dice3;
+
+        return $this;
+    }
+
+    public function getExperience(): ?Experience
+    {
+        return $this->experience;
+    }
+
+    public function setExperience(?Experience $experience): self
+    {
+        $this->experience = $experience;
 
         return $this;
     }
