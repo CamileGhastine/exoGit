@@ -63,8 +63,7 @@ class PagesController extends AbstractController
             $CombinaisonNumber = $threeOfAKind->calcul($experience, 666);
             $result[] = ['experience' => $experience, 'result' => $CombinaisonNumber];
         }
-           
-        
+          
         return $this->render('pages/result.html.twig', [
             'experiences' => $result
         ]);
