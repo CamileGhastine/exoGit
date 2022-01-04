@@ -2,18 +2,14 @@
 
 namespace App\Controller;
 
-<<<<<<< HEAD
 use App\Service\ExperienceMaker;
-=======
 use App\Entity\Experience;
 use App\Form\Type\ExperienceType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
->>>>>>> 6af7860a41185de0398e03144eeb897e9aaa374a
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Service\CombinaisonCalculator\CombinaisonCalculator;
 use App\Service\CombinaisonCalculator\ThreeOfAKind;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class PagesController extends AbstractController
 {
