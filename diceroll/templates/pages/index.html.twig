@@ -3,5 +3,30 @@
 {% block title %}Hello PagesController!{% endblock %}
 
 {% block body %}
-    <h1>Hello</h1>
+    <h1 class="text-center">Le jeux</h1>
+    <div class="py-2">
+        <a href="{{ path('description') }}" class="btn btn-outline-info">Description</a>
+    </div>
+    <main class="d-flex pt-4">
+    {{form_start(form)}}
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Nombre d'expérience : </span>
+                </div>
+                {{ form_row(form.numberOfThrow) }}
+            </div>
+        <div>
+            <button id="btn-form-submit" type="submit" class="btn btn-info">Lancer</button>
+            <div id="form-loader" class="container-svg-loader">
+                {% include "./pages/_svg-loader.html.twig" %}
+            </div>
+        </div>
+    {{form_end(form)}}
+    </main>
+    <div class="py-2">
+        <p id="result-experience">Pas de lancé.</p>
+    </div>
+    <div>
+        <a href="path('result')" class="btn btn-outline-info">Voir les résultats</a>
+    </div>
 {% endblock %}

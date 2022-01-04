@@ -35,10 +35,10 @@ class PagesController extends AbstractController
         if(is_numeric($number)) {
             $number = intval($number);
 
-            $experience = $experienceMaker->throwDices(5);
+            $experience = $experienceMaker->throwDices($number);
 
             $result = $threeOfAKind->calcul($experience, 666);    
-             
+
             return $this->json([$result], 200);
         }
 
