@@ -37,7 +37,7 @@ class PagesController extends AbstractController
 
             $experience = $experienceMaker->throwDices($number);
 
-            $result = $threeOfAKind->calcul($experience, 666);    
+            $result = $threeOfAKind->calcul($experience, 666);  
 
             return $this->json([$result], 200);
         }
