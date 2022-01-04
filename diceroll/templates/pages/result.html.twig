@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PagesController!{% endblock %}
+
+{% block body %}
+    <h1>Resultat</h1>
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombre de jet</th>
+      <th scope="col">Nombre de brelan de 6</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for experience in experiences %}
+    <tr>
+      <th scope="row">1</th>
+      <td>{{ experiences.numberOfThrow }}</td>
+      <td></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

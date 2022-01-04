@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Experience;
 use App\Service\ExperienceMaker;
 use App\Form\Type\ExperienceType;
+use App\Repository\ExperienceRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -52,9 +53,11 @@ class PagesController extends AbstractController
     }
 
     #[Route('/result', name: 'result')]
-    public function result(): Response
-    {
+    public function result(ExperienceRepository $repo): Response
+    {  
+        
         return $this->render('pages/result.html.twig', [
+            'experiences' => $repo->findAll()
         ]);
     }
 }
