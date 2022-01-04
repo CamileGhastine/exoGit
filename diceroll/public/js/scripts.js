@@ -20,9 +20,10 @@ $(document).ready(function(){
                 nbrExperience = inputNumber.val()
             }
 
-            var data = {number: nbrExperience};
+            var data = {numberOfThrow: nbrExperience};
+            console.log(data);
             $.ajax({
-                url: "/",
+                url: "/ajaxResult",
                 method: "POST",
                 dataType: "json",
                 data: data,
