@@ -21,17 +21,14 @@ $(document).ready(function(){
             }
 
             var data = {numberOfThrow: nbrExperience};
-            console.log(data);
             $.ajax({
                 url: "/ajaxResult",
                 method: "POST",
                 dataType: "json",
                 data: data,
             }).done(function(data){
-                console.log( data );
                 var result = $('#result-experience');
                 if(result.length > 0){
-                    console.log(data);
                     var text = 'Sur ' + nbrExperience + ' jets, il y a eu ' + data + ' brelant de 6.';
                     result.html(text);
                 }
