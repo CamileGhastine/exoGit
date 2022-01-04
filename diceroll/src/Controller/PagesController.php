@@ -53,11 +53,20 @@ class PagesController extends AbstractController
     }
 
     #[Route('/result', name: 'result')]
-    public function result(ExperienceRepository $repo): Response
+    public function result(ExperienceRepository $repo, ThreeOfAKind $threeOfAKind): Response
     {  
+        $result = [];
+
+        $experiences = $repo->findAll();
+
+        foreach($experiences as $experience) {
+            $CombinaisonNumber = $threeOfAKind->calcul($experience, 666);
+            $result[] = ['experience' => $experience, 'result' => $CombinaisonNumber];
+        }
+           
         
         return $this->render('pages/result.html.twig', [
-            'experiences' => $repo->findAll()
+            'experiences' => $result
         ]);
     }
 }
