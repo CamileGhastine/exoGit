@@ -1,3 +1,8 @@
-h1{
-    background-color: red;
+svg path{
+    fill: #FF6700;
+}
+.container-svg-loader{
+    display:none;
+    width:38px;
+    height:38px;
 }
